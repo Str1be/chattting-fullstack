@@ -1,0 +1,53 @@
+body {
+    font-family: monospace;
+    margin: 0;
+}
+#container {
+    width: 65%;
+    border: black 0.3px solid;
+    border-radius: 20px;
+    height: 88vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+#messages {
+    border: black 0.3px solid;
+    border-radius: 20px;
+    height: 90%;
+    margin-bottom: 3vh;
+}
+#user-interface {
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#input {
+    width: 80%;
+}
+#submit {
+    width: 10%;
+}
+form {
+    width: 100%;
+}
+.uibts {
+    box-sizing: border-box;
+    height: 35px;
+    border-radius: 10px;
+    border: 2px rgb(216, 216, 216)solid;
+    background-color: white;
+}
+#sendbutton:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+#sendbutton:active {
+    background-color: rgb(177, 177, 177);
+}
