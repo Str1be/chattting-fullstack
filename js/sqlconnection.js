@@ -1,15 +1,4 @@
-const MySQL = require('mysql');
-const connection = MySQL.createConnection({
-    host: 'localhost',
-    user: 'me',
-    password: 'secret',
-    database: 'my_db'
-});
-connection.connect();
+const pgp = require('pg-promise')(/* options */)
+const db = pgp('postgres://postgres:nazhslonyarazZz@localhost:5432/Chattting')
 
-connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-});
-
-connection.end();
+module.exports = { db };
