@@ -7,25 +7,20 @@ app.use(express.static("public"))
 app.use(express.json())
 
 app.post('/', (req,res) => {
-  let MessageFromChat = (req.body.message);
-  if (MessageFromChat != null) {
-    try{
-      db.query(`INSERT INTO messages(messagetext) VALUES ('${MessageFromChat}');`);
-  }
-    catch(err){
-        console.log(err);
-    }
+  const MessageFromChat = (req.body.messagetext);
+  const author = (req.body.author);
+  if (MessageFromChat != "") {
+    console.log(MessageFromChat + " | " + author)
+    db.query(`INSERT INTO messages(messagetext, author) VALUES ('${MessageFromChat}', '${author}');`);
     return res.status(200).send();
   }
-  else {
+  else{
     return res.status(400).send();
   }
 })
 
-app.post('/api/messages', (req,res) => {
-  let MessagesFromDB;
-  MessagesFromDB.then(db.query(`SELECT * FROM messages`))
-  console.log(MessagesFromDB);
+app.post('/api/messages', async (req,res) => {
+  let MessagesFromDB = await db.query(`SELECT * FROM messages;`);
   res.status(200).send(MessagesFromDB);
 })
 

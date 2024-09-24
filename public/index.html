@@ -6,18 +6,17 @@
     <title>Чат</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
 </head>
 <body>
-    <h1 id="test">ТЕСТОВЫЙ ТЕКСТ</h1>
     <div id="container">
-        <div id="messages">
-
-        </div>
+        <div id="messages">НИГГГГГГГГГГГГГГГГГГГЕР</div>
+        <span>
         <div id="user-interface">
-            <form method="post">
-                <input class="uibts" id="input" name="messagetext" placeholder="Сообщение сюда">
-            </form>
-            <button class="uibts" id="sendbutton" onclick="Send()">Отправить</button>
+            <input class="uibts" id="input" name="messagetext" placeholder="Сообщение сюда" required>
+            <input class="uibts" id="inputname" name="author" placeholder="Имя сюда" required>
+            <button class="uibts buttons" id="refreshbutton" onclick="messagesonscreen()"><p id="refreshid">1:000</p><img id="refresh" src="./images/refresh.svg"></button>
+            <button class="uibts buttons" id="sendbutton" onclick="Send()">Отправить</button>
         </div>
     </div>
     <script src="messagehandler.js"></script>
