@@ -1,0 +1,55 @@
+#container {
+    color: white;
+    background-color: #690020;
+    width: 40%;
+    height: 88vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+}
+#messages {
+    height: 90%;
+    margin-bottom: 3vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-anchor: auto;
+}
+#user-interface {
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#input {
+    width: 500px;
+}
+#submit {
+    width: 10%;
+}
+form {
+    width: 100%;
+}
+.uibts {
+    box-sizing: border-box;
+    height: 35px;
+    border: none;
+    background-color: white;
+}
+.message_box{
+    margin: 15px 0;
+    background-color: black;
+    width: fit-content;
+    max-width: 70%;
+    padding: 8px;
+}
+.author {
+    font-size: 1.7vh;
+    font-weight: 400;
+}
+.message_text {
+    font-size: 2.2vh;
+    overflow-wrap:anywhere;
+}

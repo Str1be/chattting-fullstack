@@ -1,21 +1,10 @@
-let time = 9;
-const timertext = document.getElementById("refreshid");
-
 document.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     Send();
   }
 });
-
-function timer() {
-  time--;
-  if(time <= 0) {
-    time = 9;
-    messagesonscreen();
-  }
-  timertext.textContent = time;
-}
-setInterval(timer, 100);
+window.onload = () => messagesonscreen("page loaded!");
+setInterval(() => messagesonscreen("refresh"), 1000);
 
 function Send() {
     const message = document.getElementById('input').value;
@@ -23,10 +12,11 @@ function Send() {
     const data = { messagetext: message, author : author}
     fetch('/', {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data),});
     document.getElementById('input').value = null;
-    messagesonscreen();
+    messagesonscreen("send");
 }
 let msgsprevious;
-async function messagesonscreen() {
+async function messagesonscreen(from) {
+    console.log(from);
     let msgspreresult;
     const msgs = document.getElementById("messages");
     let messages = await fetch('/api/messages', {method: "POST",});
@@ -34,7 +24,7 @@ async function messagesonscreen() {
     nmbofmessages = Object.keys(messages).length;
     //Рендер сообщений. Говно - переделать
     for (let i = 0; i < nmbofmessages; i++) {
-      msgspreresult = msgspreresult + `${messages[i].author}:${messages[i].messagetext}` + "<br>";
+      msgspreresult = msgspreresult + `<div class="message_box"><div class="author">${messages[i].author}</div><div class="message_text">${messages[i].messagetext}</div></div>`;
     }
     if (msgs.innerHTML != msgsprevious) {
       msgs.innerHTML = msgspreresult;

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат</title>
+    <link rel="stylesheet" href="chat_styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+    <div id="container">
+        <div id="messages"></div>
+        <span>
+        <div id="user-interface">
+            <input class="uibts" id="input" name="messagetext" placeholder="Сообщение сюда" required>
+            <input class="uibts" id="inputname" name="author" placeholder="Имя сюда" required>
+            <button class="uibts buttons" id="sendbutton" onclick="Send()">Отправить</button>
+        </div>
+    </div>
+    <script src="messagehandler.js"></script>
+</body>
+</html>
