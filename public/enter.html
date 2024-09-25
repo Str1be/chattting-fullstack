@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/relog.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+    <div id="Сontainer">
+        <div id="container_header"><h1 id="MainHeader">Вход</h1><p id="SubHeader" onclick="changetoreg()">Зарегистрироваться?</p></div>
+        <div id="inputs">
+            <input placeholder="Никнейм" id="nickname">
+            <input placeholder="Пароль" id="password">
+            <button id="submit" class="buttons" onclick="sendinfolog()">Отправить</button>
+        </div>
+        <p id="answer"></p>
+    </div>
+    <script src="js/reloghandler.js"></script>
+</body>
+</html>

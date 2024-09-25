@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height: 100vh;
+}
+#Сontainer {
+    background-color: #690020;
+    color: white;
+    width: 400px;
+    text-align: center;
+    padding: 15px;
+}
+#container_header > *{
+    margin: 0;
+}
+#SubHeader {
+    font-size: 14px;
+    text-decoration: underline;
+    color: red;
+    user-select: none;
+    width: fit-content;
+    margin: 0 auto;
+
+}
+#SubHeader:hover {
+    cursor: pointer;
+}
+#inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
+#inputs > * {
+    width: 70%;
+    height: 30px;
+    border: none;
+    text-align: center;
+}

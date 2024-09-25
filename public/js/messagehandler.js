@@ -9,7 +9,7 @@ setInterval(() => messagesonscreen("refresh"), 1000);
 function Send() {
     const message = document.getElementById('input').value;
     const author = document.getElementById('inputname').value;
-    const data = { messagetext: message, author : author}
+    const data = { messagetext: message, author: author}
     fetch('/', {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data),});
     document.getElementById('input').value = null;
     messagesonscreen("send");
